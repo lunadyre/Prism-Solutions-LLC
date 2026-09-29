@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prism Solutions LLC | Efficiency & Time Management Consulting, Phoenix</title>
+<meta name="description" content="Queer, disabled, woman-owned efficiency consulting in Phoenix. Process audits, time blocking, bottleneck fixes, and workflows that actually stick.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== EDIT THESE: phone, email ===== */
+:root{
+  --bg:#0b0b10;--bg2:#12121a;--card:#16161f;--line:#262633;
+  --text:#ecebf2;--muted:#9a99ab;
+  --rainbow:linear-gradient(90deg,#ff5f6d,#ffb35c,#ffe46b,#5fe39a,#5cc8ff,#9b7bff,#e07bff);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2,h3{font-family:"Space Grotesk",sans-serif;line-height:1.1;letter-spacing:-.02em}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.rb-text{background:var(--rainbow);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rb-line{height:3px;background:var(--rainbow);opacity:.85}
+:focus-visible{outline:2px solid #5cc8ff;outline-offset:3px}
+
+/* nav */
+header{position:sticky;top:0;z-index:10;background:rgba(11,11,16,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:"Space Grotesk";font-weight:700;font-size:1.25rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo svg{width:28px;height:28px}
+.links{display:flex;gap:28px;list-style:none}
+.links a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem}
+.links a:hover{color:var(--text)}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:1px solid var(--line);transition:.2s}
+.btn-primary{background:var(--text);color:var(--bg);border:none;position:relative}
+.btn-primary:hover{box-shadow:0 0 0 2px var(--bg),0 0 0 4px #9b7bff}
+.btn-ghost:hover{border-color:var(--muted)}
+@media(max-width:760px){.links{display:none}}
+
+/* hero */
+.hero{position:relative;padding:120px 0 100px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-40% -10% auto auto;width:720px;height:720px;background:conic-gradient(from 180deg,#ff5f6d,#ffb35c,#ffe46b,#5fe39a,#5cc8ff,#9b7bff,#e07bff,#ff5f6d);filter:blur(140px);opacity:.16;border-radius:50%;animation:spin 30s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.hero::before{animation:none}}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);font-size:.85rem;color:var(--muted);margin-bottom:28px}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--rainbow)}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);max-width:14ch;margin-bottom:24px}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:56ch;margin-bottom:36px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+
+section{padding:96px 0;border-top:1px solid var(--line)}
+.eyebrow{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px;max-width:22ch}
+.lead{color:var(--muted);max-width:60ch;font-size:1.08rem}
+
+/* cards */
+.grid{display:grid;gap:20px;margin-top:48px}
+.g4{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;transition:.25s}
+.card:hover{transform:translateY(-3px);border-color:#3a3a4c}
+.card::before{content:"";position:absolute;top:0;left:28px;right:28px;height:2px;background:var(--rainbow);opacity:0;transition:.25s}
+.card:hover::before{opacity:.9}
+.card h3{font-size:1.25rem;margin:14px 0 10px}
+.card p{color:var(--muted);font-size:.97rem}
+.num{font-family:"Space Grotesk";font-size:.9rem;color:var(--muted)}
+
+/* stats */
+.stat{font-family:"Space Grotesk";font-size:3.2rem;font-weight:700}
+.stat-l{font-weight:600;margin:4px 0 8px}
+
+/* about */
+.about{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+@media(max-width:860px){.about{grid-template-columns:1fr}}
+.values{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.values span{padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:.9rem;background:var(--bg2)}
+.prism-art{aspect-ratio:1;border-radius:24px;background:var(--bg2);border:1px solid var(--line);display:grid;place-items:center;overflow:hidden}
+.prism-art svg{width:78%}
+
+/* quotes */
+blockquote{font-size:1.05rem}
+blockquote footer{margin-top:18px;color:var(--muted);font-size:.9rem}
+
+/* faq */
+details{border-bottom:1px solid var(--line);padding:22px 0}
+summary{cursor:pointer;font-weight:600;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::after{content:"+";color:var(--muted);font-size:1.4rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:12px;max-width:70ch}
+
+/* contact */
+.contact{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:64px 40px;text-align:center;position:relative;overflow:hidden}
+.contact::after{content:"";position:absolute;inset:auto 0 0 0;height:3px;background:var(--rainbow)}
+.contact h2{margin:0 auto 16px}
+.contact .lead{margin:0 auto 32px}
+.contact .cta{justify-content:center}
+
+footer.site{padding:40px 0;color:var(--muted);font-size:.9rem}
+footer.site .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+</style>
+</head>
+<body>
+<div class="rb-line"></div>
+<header>
+  <nav class="wrap">
+    <a href="#" class="logo" aria-label="Prism Solutions home">
+      <svg viewBox="0 0 32 32" fill="none"><path d="M16 3 29 27H3Z" stroke="#ecebf2" stroke-width="2" stroke-linejoin="round"/><path d="M16 14 30 19" stroke="url(#g)" stroke-width="2"/><defs><linearGradient id="g" x1="16" x2="30" y1="0" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#ff5f6d"/><stop offset=".5" stop-color="#5fe39a"/><stop offset="1" stop-color="#9b7bff"/></linearGradient></defs></svg>
+      Prism Solutions
+    </a>
+    <ul class="links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Results</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary">Book an audit</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" style="border-top:none">
+  <div class="wrap">
+    <div class="badge"><i></i> Queer, disabled &amp; woman-owned · Phoenix, AZ</div>
+    <h1>Efficiency consulting that moves your work <span class="rb-text">forward</span>.</h1>
+    <p>Prism Solutions helps teams spot bottlenecks and streamline workflows. Clear guidance, practical plans, and measurable results from the first session.</p>
+    <div class="cta">
+      <a href="#contact" class="btn btn-primary">Book a time audit</a>
+      <a href="#services" class="btn btn-ghost">See how it works</a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <p class="eyebrow">How we work</p>
+    <h2>Most time management advice assumes you're the problem. Usually, you're not.</h2>
+    <p class="lead">We map your real workflow, protect deep work, remove bottlenecks, and build habits that stick, designed for how real people (and real brains and bodies) actually work.</p>
+    <div class="grid g4">
+      <div class="card"><span class="num">01</span><h3>Process audits</h3><p>We map your real workflow, not the one on paper, and pinpoint where hours actually disappear.</p></div>
+      <div class="card"><span class="num">02</span><h3>Time blocking</h3><p>Structured calendars that protect deep work, batch tasks, and cut constant context-switching.</p></div>
+      <div class="card"><span class="num">03</span><h3>Bottleneck fixes</h3><p>One slow step can stall everything. We find the constraint, remove it, and keep it from coming back.</p></div>
+      <div class="card"><span class="num">04</span><h3>Team adoption</h3><p>A process only works if people use it. We focus on simple, sustainable, accessible habits.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <p class="eyebrow">By the numbers</p>
+    <h2>Three steps to reclaim a <span class="rb-text">third of your week</span>.</h2>
+    <p class="lead">Targets we aim for when we map and rebuild your workflows.</p>
+    <div class="grid g4">
+      <div class="card"><div class="stat rb-text">33%</div><div class="stat-l">Less meeting time</div><p>Structured agendas and tighter cadences.</p></div>
+      <div class="card"><div class="stat rb-text">3x</div><div class="stat-l">Faster turnaround</div><p>Clear ownership and checkpoints.</p></div>
+      <div class="card"><div class="stat rb-text">50%</div><div class="stat-l">Less busywork</div><p>Automation replaces data entry and status chasing.</p></div>
+      <div class="card"><div class="stat rb-text">5hrs</div><div class="stat-l">Saved per person weekly</div><p>Back to the work that actually matters.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <p class="eyebrow">About</p>
+      <h2>Built by someone who had to learn efficiency the hard way.</h2>
+      <p class="lead">Prism Solutions is led by Lindsey-Star Guevara, a queer, disabled woman and business owner in Phoenix. When your energy is a limited resource, wasted time isn't an inconvenience; it's a cost. That lens shapes everything: systems that are realistic, flexible, and built to last without burning people out.</p>
+      <div class="values"><span>Accessible by design</span><span>No judgment</span><span>Practical over pretty</span><span>Inclusive teams</span><span>Transparent pricing</span></div>
+    </div>
+    <div class="prism-art" aria-hidden="true">
+      <svg viewBox="0 0 300 300" fill="none">
+        <defs><linearGradient id="rb" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ff5f6d"/><stop offset=".2" stop-color="#ffb35c"/><stop offset=".35" stop-color="#ffe46b"/><stop offset=".5" stop-color="#5fe39a"/><stop offset=".68" stop-color="#5cc8ff"/><stop offset=".84" stop-color="#9b7bff"/><stop offset="1" stop-color="#e07bff"/></linearGradient></defs>
+        <line x1="0" y1="165" x2="118" y2="150" stroke="#ecebf2" stroke-width="3"/>
+        <polygon points="300,95 300,215 175,160 160,148" fill="url(#rb)" opacity=".85"/>
+        <polygon points="150,55 235,215 65,215" fill="#0b0b10" stroke="#ecebf2" stroke-width="3" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Client feedback</p>
+    <h2>What teams say after working with us.</h2>
+    <div class="grid g4" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+      <blockquote class="card">"The first session mapped our bottlenecks exactly. Within a month, weekly reporting time was cut in half and the team finally trusts the process."<footer>Operations lead, Phoenix services company</footer></blockquote>
+      <blockquote class="card">"Lindsey-Star didn't just hand us a list of tips. We walked out with a structured workflow we still use every single week."<footer>Office manager, Phoenix professional firm</footer></blockquote>
+      <blockquote class="card">"Our Monday meetings used to eat the whole morning. The new agenda structure saved us hours and nobody misses the old format."<footer>Department head, Phoenix logistics team</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <p class="eyebrow">FAQ</p>
+    <h2>Straight answers.</h2>
+    <div style="margin-top:32px">
+      <details><summary>How does the first session work?</summary><p>We start with a time audit. You show us how your team actually spends the day, and we map the bottlenecks together. No vague theory.</p></details>
+      <details><summary>What does a typical engagement look like?</summary><p>We agree on scope, set a timeline, and define success upfront. You get a tailored plan, not a generic deck.</p></details>
+      <details><summary>How long before we see results?</summary><p>Most clients feel the difference within the first few weeks. Small, sustainable changes add up fast.</p></details>
+      <details><summary>How do you price projects?</summary><p>Based on scope. Costs and deliverables are laid out before anything starts, so there are no surprises.</p></details>
+      <details><summary>Do you work with remote or accessibility-focused teams?</summary><p>Yes. Sessions can be virtual, asynchronous, or in person around Phoenix, and every system is built with accessibility and flexibility in mind.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <p class="eyebrow">Get started</p>
+      <h2>Ready to get your time back?</h2>
+      <p class="lead">Book a time audit and walk away with a clear map of where your hours are going.</p>
+      <div class="cta">
+        <a href="tel:+16028827622" class="btn btn-primary">Call (602) 882-7622</a>
+        <a href="mailto:admin@prismsolutionsllc.net?subject=Time%20audit" class="btn btn-ghost">Email us</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© <script>document.write(new Date().getFullYear())</script> Prism Solutions LLC · Phoenix, Arizona</span>
+    <span class="rb-text" style="font-weight:600">Queer · Disabled · Woman-owned</span>
+  </div>
+</footer>
+</body>
+</html>
