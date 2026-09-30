@@ -75,7 +75,8 @@ h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px;max-width:22ch}
 .values{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
 .values span{padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:.9rem;background:var(--bg2)}
 .prism-art{aspect-ratio:1;border-radius:24px;background:var(--bg2);border:1px solid var(--line);display:grid;place-items:center;overflow:hidden}
-.prism-art svg{width:78%}
+.prism-art img{width:100%;height:100%;object-fit:cover;display:block}
+.prism-art{background:#000}
 
 /* quotes */
 blockquote{font-size:1.05rem}
@@ -166,13 +167,8 @@ footer.site .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
       <p class="lead">Prism Solutions is led by Lindsey-Star Guevara, a queer, disabled woman and business owner in Phoenix. When your energy is a limited resource, wasted time isn't an inconvenience; it's a cost. That lens shapes everything: systems that are realistic, flexible, and built to last without burning people out.</p>
       <div class="values"><span>Accessible by design</span><span>No judgment</span><span>Practical over pretty</span><span>Inclusive teams</span><span>Transparent pricing</span></div>
     </div>
-    <div class="prism-art" aria-hidden="true">
-      <svg viewBox="0 0 300 300" fill="none">
-        <defs><linearGradient id="rb" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ff5f6d"/><stop offset=".2" stop-color="#ffb35c"/><stop offset=".35" stop-color="#ffe46b"/><stop offset=".5" stop-color="#5fe39a"/><stop offset=".68" stop-color="#5cc8ff"/><stop offset=".84" stop-color="#9b7bff"/><stop offset="1" stop-color="#e07bff"/></linearGradient></defs>
-        <line x1="0" y1="165" x2="118" y2="150" stroke="#ecebf2" stroke-width="3"/>
-        <polygon points="300,95 300,215 175,160 160,148" fill="url(#rb)" opacity=".85"/>
-        <polygon points="150,55 235,215 65,215" fill="#0b0b10" stroke="#ecebf2" stroke-width="3" stroke-linejoin="round"/>
-      </svg>
+    <div class="prism-art">
+      <img src="logo.jpg" alt="Prism Solutions, LLC logo: a glass prism splitting light into a rainbow, Phoenix, Arizona">
     </div>
   </div>
 </section>
